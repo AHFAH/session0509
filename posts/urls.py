@@ -8,7 +8,7 @@ router.register('viewsets', PostModelViewSet)
 app_name = 'posts'
 
 urlpatterns = [
-    path('post/', PostAPIView2.as_view()),
+    path('post/', PostAPIView.as_view()),
     path('list', PostList.as_view()),
     path('comment/', CommentCreate),
 ]
