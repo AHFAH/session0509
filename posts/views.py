@@ -47,8 +47,6 @@ class PostList(APIView):
 #과제 3번 : 특정 게시글에 댓글 달기
 @api_view(['POST'])
 def CommentCreate(request):
-    post = Post.objects.get(pk = request.data.get('post'))
-    writer = User.objects.get(pk = request.data.get('writer'))
     serializer = CommentSerializer(data = request.data)
     if serializer.is_valid(raise_exception=True):
         serializer.save()
