@@ -14,7 +14,7 @@ class PostBaseSerializer(serializers.Serializer):
         post = Post.objects.create(
             content = validated_data['content'],
             view_count = validated_data['view_count'],
-            writer = User.objects.create(username=validated_data['writer']),
+            writer = User.objects.get(id=validated_data['writer']),
         )
         return post
 
